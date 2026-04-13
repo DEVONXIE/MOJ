@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: Moj
+  datasource:
+    url: jdbc:mysql://localhost:3306/moj?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis-plus:
+  mapper-locations:
+  configuration:
+    map-underscore-to-camel-case: true
+
+jwt:
+  secret: your-256-bit-secret-key-here-must-be-at-least-256-bits-long
+  expiration: 86400000
+  header: Authorization
+  prefix: "Bearer "
+
+langchain4j:
+  openai:
+    chat-model:
+      api-key: ${OPENAI_API_KEY:your-api-key-here}
+      model-name: gpt-3.5-turbo
+      temperature: 0.3
+    embedding-model:
+      api-key: ${OPENAI_API_KEY:your-api-key-here}
